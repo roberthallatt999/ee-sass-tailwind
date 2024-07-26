@@ -1,0 +1,38 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./server-conf/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./server-conf/snippets:/etc/nginx/snippets
+      - ./server-conf/ssl:/etc/nginx/certs
+      - ../docroot:/var/www/html
+    depends_on:
+      - php
+      - db
+
+  php:
+    image: php:latest
+    container_name: php
+    volumes:
+      - ../docroot:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: db
+      MYSQL_PASSWORD: db
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  site:
+  db_data:

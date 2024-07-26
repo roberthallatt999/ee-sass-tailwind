@@ -1,0 +1,47 @@
+{
+  "name": "webpack-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack --config webpack.config.js --watch",
+    "build": "npx webpack --config webpack.config.js --env production",
+    "cert": "dotenv -- cross-var mkcert -cert-file .devcontainer/server-conf/ssl/%DOMAIN%.pem -key-file .devcontainer/server-conf/ssl/%DOMAIN%-key.pem localhost 127.0.0.1 ::0 %DOMAIN%"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "autoprefixer": "^10.4.19",
+    "babel-loader": "^8.3.0",
+    "browser-sync": "^2.29.3",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.11.0",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "http-proxy-middleware": "^3.0.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "postcss": "^8.4.39",
+    "postcss-import": "^16.1.0",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.77.6",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.4.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.92.1",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.10.0",
+    "cross-var": "1.1.0",
+    "dotenv-cli": "3.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "kill-port": "^2.0.1",
+    "normalize.css": "^8.0.1"
+  }
+}
