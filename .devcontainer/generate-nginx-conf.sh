@@ -24,7 +24,7 @@ http {
         ssl_certificate /etc/nginx/certs/${DOMAIN}.pem;
         ssl_certificate_key /etc/nginx/certs/${DOMAIN}-key.pem;
 
-        root /var/www/html/public;
+        root ${ROOT};
         index index.php index.html index.htm;
 
         location / {

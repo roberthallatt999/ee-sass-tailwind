@@ -23,7 +23,8 @@ RUN set -x \
     && docker-php-ext-install -j$(nproc) mysqli \
     && docker-php-ext-install -j$(nproc) pdo \
     && docker-php-ext-install -j$(nproc) pdo_mysql \
-    && docker-php-ext-install -j$(nproc) intl
-
+    && docker-php-ext-install -j$(nproc) intl \
+    && docker-php-ext-install -j$(nproc) exif
+    
 # Set working directory
 WORKDIR /var/www/html
