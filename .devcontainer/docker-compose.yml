@@ -15,7 +15,7 @@ services:
       - db
 
   php:
-    image: php:latest
+    image: ghcr.io/roberthallatt999/php81:latest
     container_name: php
     volumes:
       - ../docroot:/var/www/html
